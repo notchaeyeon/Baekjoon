@@ -1,0 +1,9 @@
+#SEX_UPON_INTAKE = Intact, SEX_UPON_OUTCOME = !Intact  
+
+SELECT ins.ANIMAL_ID, ins.ANIMAL_TYPE, ins.NAME
+
+FROM ANIMAL_INS as ins 
+  INNER JOIN ANIMAL_OUTS as outs ON ins.ANIMAL_ID = outs.ANIMAL_ID
+  
+WHERE ins.SEX_UPON_INTAKE LIKE 'Intact%' 
+  AND not outs.SEX_UPON_OUTCOME LIKE 'Intact%'
