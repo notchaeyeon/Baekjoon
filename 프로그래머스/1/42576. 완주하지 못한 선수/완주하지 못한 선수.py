@@ -1,0 +1,15 @@
+def solution(participant, completion):
+    answer = ""
+    participant.sort()
+    completion.sort()
+    
+    while(completion):
+        if participant[-1] == completion[-1]:
+            participant.pop()
+            completion.pop()
+        else: 
+            answer = participant[-1]
+            return answer
+
+    answer = participant[-1]
+    return answer
